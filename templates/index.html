@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/assets/img/favicon.png" rel="icon" />
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS File -->
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Libraries CSS Files -->
+    <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/lib/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/lib/aos/aos.css') }}"
+    />
+    <link href="/lib/magnific-popup/magnific-popup.css" rel="stylesheet" />
+
+    <!-- Main Stylesheet File -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/btnwhatsapp.css') }}"
+    />
+    <!-- <link rel="stylesheet" href="/css/btnwhatsapp.css"> -->
+
+    <!-- Botón whats app -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://api.tesisymasters.com/assets/js/popup/css/popup.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.tesisymasters.com/form/assets/css/form.css"
+      rel="stylesheet"
+    />
+
+    <!-- JS -->
+    <script src="https://api.tesisymasters.com/form/assets/plugin/jquery/jquery-3.6.0.min.js"></script>
+    <script src="https://api.tesisymasters.com/form/assets/plugin/jquery-validation/jquery.validate.min.js"></script>
+    <script src="https://api.tesisymasters.com/form/assets/plugin/magnific-popup/magnific-popup.min.js"></script>
+    <script src="https://api.tesisymasters.com/form/assets/plugin/datepicker/datepicker.js"></script>
+    <script src="https://api.tesisymasters.com/form/assets/plugin/intl-tel-input/js/intlTelInput.js"></script>
+    <script src="https://api.tesisymasters.com/form/assets/plugin/jquery/js.cookie.min.js"></script>
+    <script src="https://api.tesisymasters.com/form/assets/plugin/flatpickr/flatpickr.js"></script>
+    <script src="https://api.tesisymasters.com/form/assets/plugin/jquery/jquery-migrate.min.js"></script>
+    <script src="https://api.tesisymasters.com/form/assets/plugin/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <section id="intro">
+      <div class="intro-text">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 text-left headerTitulo">
+              <h1 class="fontGilmerHeavy headerTituloTamano">
+                Hacemos tu proyecto universitario
+              </h1>
+              <p class="fontGilmerMedium">100% confidencial y seguro</p>
+              <div class="col-sm-6">
+                <img class="imgMovil" src="/assets/img/home.webp" />
+              </div>
+              <div class="Formulario">
+                <div id="divFormPresupuesto">
+                  <form id="formPresupuesto">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <label
+                          >Nombre / Alias
+                          <font class="errorSite15">*</font></label
+                        >
+                        <input
+                          id="nombrePresupuesto"
+                          name="nombrePresupuesto"
+                          class="required"
+                          minlength="3"
+                          maxlength="60"
+                        />
+                      </div>
+                      <div class="col-sm-6">
+                        <label>Email <font class="errorSite15">*</font></label>
+                        <input
+                          id="emailPresupuesto"
+                          name="emailPresupuesto"
+                          type="email"
+                          class="required"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <label
+                          >Teléfono <font class="errorSite15">*</font></label
+                        >
+                        <input
+                          id="phonePresupuesto"
+                          name="phonePresupuesto"
+                          type="tel"
+                          class="required inputPhone"
+                          style="padding-left: 40px !important"
+                          onkeypress="return valideKey(event);"
+                          onchange="copyPhone(this.id)"
+                          minlength="5"
+                          maxlength="10"
+                        />
+                      </div>
+                      <div class="col-sm-6">
+                        <label
+                          >Carrera <font class="errorSite15">*</font></label
+                        >
+                        <input
+                          id="carreraPresupuesto"
+                          name="carreraPresupuesto"
+                          class="required"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <label>Fecha final de entrega</label>
+                        <input
+                          id="fechaEntrega"
+                          name="fechaEntrega"
+                          class="calInput"
+                          placeholder="DD/MM/YYYY"
+                        />
+                      </div>
+                      <div class="col-sm-6">
+                        <label
+                          >Tipo de Trabajo
+                          <font class="errorSite15">*</font></label
+                        >
+                        <select
+                          id="tipoProyectoPresupuesto"
+                          name="tipoProyectoPresupuesto"
+                          class="required"
+                        >
+                          <option value="0" disabled="" selected="">
+                            Seleccionar
+                          </option>
+                          <option value="Anteproyecto de Tesis">
+                            Anteproyecto de Tesis
+                          </option>
+                          <option value="Tesis de Grado/Tesina">
+                            Tesis de Grado/Tesina
+                          </option>
+                          <option value="Tesis Doctoral">Tesis Doctoral</option>
+                          <option value="Tesis de Maestría">
+                            Tesis de Maestría
+                          </option>
+                          <option value="Monografías">Monografías</option>
+                          <option value="Ensayos">Ensayos</option>
+                          <option value="Artículos científicos">
+                            Artículos científicos
+                          </option>
+                          <option value="Análisis estadístico/SPSS">
+                            Análisis estadístico/SPSS
+                          </option>
+                          <option value="Parciales Domiciliarios">
+                            Parciales Domiciliarios
+                          </option>
+                          <option value="PPT">PPT</option>
+                          <option value="PPT + GUION">PPT + GUION</option>
+                          <option value="Otros">Otros</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <label>Número de páginas</label>
+                        <input
+                          id="numPagPresupuesto"
+                          name="numPagPresupuesto"
+                          maxlength="5"
+                          onkeypress="return valideKey(event);"
+                        />
+                      </div>
+                      <div class="col-sm-6"></div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <label>Comentario</label>
+                        <textarea
+                          id="comentarioPresupuesto"
+                          name="comentarioPresupuesto"
+                          name="textarea"
+                        ></textarea>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="row">
+                          <div class="col-2" style="padding-top: 4px">
+                            <!-- Default switch -->
+                            <div class="custom-control custom-switch">
+                              <label class="switch">
+                                <input
+                                  id="legalFormPresupuesto"
+                                  type="checkbox"
+                                  onchange="legalActive('FormPresupuesto')"
+                                />
+                                <span class="slider round sliderSite4"></span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-10">
+                            <label class="labelLegalesSite4"
+                              >Acepto la
+                              <a href="/politica-de-privacidad/"
+                                >política de privacidad</a
+                              >
+                              y <a href="/aviso-legal/">aviso legal </a>.
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-12 text-center">
+                        <button
+                          id="btnFormPresupuesto"
+                          class="btn"
+                          type="submit"
+                          disabled
+                        >
+                          Enviar
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <img class="imgDesktop" src="/assets/img/home.webp" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
